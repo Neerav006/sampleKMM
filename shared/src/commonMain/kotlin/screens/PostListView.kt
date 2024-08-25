@@ -1,10 +1,6 @@
-package com.example.sampleapicall.android
+package screens
 
-import android.content.res.Configuration
-import android.os.Bundle
-import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import androidx.activity.viewModels
+
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -23,33 +19,15 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.sampleapicall.Greeting
 import com.example.sampleapicall.viewmodels.PostViewModel
-import screens.MainContent
-
-
-class MainActivity : ComponentActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        val postViewModel: PostViewModel by viewModels()
-        setContent {
-//            MyApplicationTheme {
-//                Surface(
-//                    modifier = Modifier.fillMaxSize(),
-//                    color = MaterialTheme.colorScheme.background
-//                ) {
-//                    PostListView(modifier = Modifier.padding(16.dp), postViewModel)
-//                }
-//            }
-            MainContent(postViewModel = postViewModel)
-        }
-    }
-}
+import org.jetbrains.compose.resources.painterResource
+import org.jetbrains.compose.ui.tooling.preview.Preview
+import sampleapicall.shared.generated.resources.Res
+import sampleapicall.shared.generated.resources.ic_profile
 
 @Composable
 fun PostListView(modifier: Modifier, postViewModel: PostViewModel) {
@@ -76,7 +54,7 @@ fun GreetingView(text: String, subtitle: String, modifier: Modifier) {
     Column {
         Row(modifier, verticalAlignment = Alignment.Top) {
             Image(
-                painterResource(id = R.drawable.ic_profile),
+                painterResource(Res.drawable.ic_profile),
                 contentDescription = "",
                 modifier = Modifier
                     .width(50.dp)
@@ -101,10 +79,10 @@ fun GreetingView(text: String, subtitle: String, modifier: Modifier) {
 }
 
 @Preview(
-    name = "MyApp",
-    showSystemUi = true,
-    showBackground = true,
-    uiMode = Configuration.UI_MODE_NIGHT_NO
+//    name = "MyApp",
+//    showSystemUi = true,
+//    showBackground = true,
+//    uiMode = Configuration.UI_MODE_NIGHT_NO
 )
 @Composable
 fun DefaultPreview() {
@@ -119,10 +97,10 @@ fun DefaultPreview() {
 }
 
 @Preview(
-    name = "PostList",
-    showSystemUi = true,
-    showBackground = true,
-    uiMode = Configuration.UI_MODE_NIGHT_NO
+//    name = "PostList",
+//    showSystemUi = true,
+//    showBackground = true,
+//    uiMode = Configuration.UI_MODE_NIGHT_NO
 )
 @Composable
 fun PostListPreview() {

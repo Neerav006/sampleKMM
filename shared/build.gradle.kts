@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidLibrary)
+    alias(libs.plugins.jetbrainsCompose)
     kotlin("plugin.serialization") version "1.9.20"
 }
 
@@ -33,6 +34,12 @@ kotlin {
         }
         commonMain.dependencies {
             //put your multiplatform dependencies here
+            implementation(compose.runtime)
+            implementation(compose.foundation)
+            implementation(compose.material3)
+            implementation(compose.ui)
+            implementation(compose.components.resources)
+            implementation(compose.components.uiToolingPreview)
 
             //Koin
             implementation(libs.koin.core)
@@ -73,4 +80,7 @@ android {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
+}
+dependencies {
+    implementation(libs.androidx.material3.android)
 }

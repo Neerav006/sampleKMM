@@ -27,6 +27,8 @@ lifecycleRuntimeComposeAndroid = "2.8.2"
 lifecycleViewModel = "2.8.2"
 roomRuntime = "2.7.0-alpha05"
 sqliteBundled = "2.5.0-SNAPSHOT"
+material3Android = "1.2.1"
+uiToolingPreview = "1.6.8"
 
 [libraries]
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
@@ -68,6 +70,8 @@ coil-compose = { module = "io.coil-kt.coil3:coil-compose", version.ref = "coil3"
 coil-compose-core = { module = "io.coil-kt.coil3:coil-compose-core", version.ref = "coil3" }
 coil-network-ktor = { module = "io.coil-kt.coil3:coil-network-ktor", version.ref = "coil3" }
 coil-mp = { module = "io.coil-kt.coil3:coil", version.ref = "coil3" }
+androidx-material3-android = { group = "androidx.compose.material3", name = "material3-android", version.ref = "material3Android" }
+ui-tooling-preview = { module = "org.jetbrains.compose.ui:ui-tooling-preview", version.ref = "uiToolingPreview" }
 
 
 
@@ -77,3 +81,4 @@ androidLibrary = { id = "com.android.library", version.ref = "agp" }
 kotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
 kotlinCocoapods = { id = "org.jetbrains.kotlin.native.cocoapods", version.ref = "kotlin" }
+jetbrainsCompose = { id = "org.jetbrains.compose", version.ref = "compose-plugin" }
